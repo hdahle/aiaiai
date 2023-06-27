@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai'
+import { Configuration, OpenAIApi } from './openai'
 import { process } from './env'
 
 const configuration = new Configuration({
