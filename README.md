@@ -7,7 +7,7 @@ https://scrimba.com/learn/buildaiapps
 
 - Get an API key from OpenAPI
 - Import the openai object from openai
-- The Youtube/Scrimab project this is based on used Vite for deployment
+- The Youtube/Scrimba project this is based on used Vite for deployment
 - While Vite worked well for hosting on localhost, I could not get it to build an app correctly for remote deployment
 - I decided to go old-school and use webpack
 
