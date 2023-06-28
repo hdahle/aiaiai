@@ -1,10 +1,12 @@
 {
-  "name": "project",
+  "name": "aiaiai project",
+  "private": true,
   "dependencies": {
-    "firebase": "^9.23.0"
+    "openai": "^3.3.0"
   },
   "devDependencies": {
-    "vite": "latest"
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "start": "vite",
