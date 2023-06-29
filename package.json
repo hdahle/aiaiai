@@ -9,9 +9,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "webpack",
+    "wsl": "sudo cp dist/* /var/www/html/"
   }
 }
