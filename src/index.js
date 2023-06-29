@@ -15,7 +15,7 @@ document.addEventListener('submit', (e) => {
   e.preventDefault()
   const userInput = document.getElementById('user-input')
   conversationStr += " " + userInput.value + " ->"
-  console.log(conversationStr)
+  //console.log(conversationStr)
   fetchReply()
   const newSpeechBubble = document.createElement('div')
   newSpeechBubble.classList.add('speech', 'speech-human')
@@ -35,7 +35,7 @@ async function fetchReply() {
     temperature: 0,
     stop: ['\n', ' ->']
   })
-  console.log(response)
+  console.log('OpenAI response:', response)
   conversationStr += response.data.choices[0].text + '\n'
   renderTypewriterText(response.data.choices[0].text)
 }
@@ -53,5 +53,5 @@ function renderTypewriterText(text) {
     }
     i++
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
-  }, 25)
+  }, 5)
 }
