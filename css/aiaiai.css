@@ -7,7 +7,7 @@ input[type="text"] {
 .chatbot-conversation-container {
   height: calc(100vh - 256px);
   overflow-y: scroll;
-  margin: 1em 0;
+  /*margin: 1em 0;*/
 }
 
 .chatbot-input-container {
@@ -58,13 +58,12 @@ body {
 }
 
 .input-field {
-  border: 1px;
   border-radius: 8px;
-  border-color: #632340;
   background-color: white;
   color: #632340;
 }
 
 .user-input {
-  width: calc(100% - 48px);
+  border: none;
+  width: calc(100% - 50px);
 }
