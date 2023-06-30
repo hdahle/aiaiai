@@ -1,21 +1,19 @@
-//
-// A super-simple node.js HTTP(S) API-proxy
-//
-// H Dahle
-//
-
 /*
-  Example of properly formatted BODY in POST request
-        {
-          model: "davinci:ft-hamachi-as-2023-06-27-08-20-34",
-          prompt: "What is the meaning of life?",
-          temperature: 0.3,
-          max_tokens: 100,
-          presence_penalty: 0,
-          frequency_penalty: 0,
-          stop: ['\n', ' ->']
-        }
-*/
+ * A super-simple node.js HTTP(S) API-proxy
+ *
+ * H Dahle
+ *
+ *  Example of properly formatted BODY in POST request
+ *       {
+ *         model: "davinci:ft-hamachi-as-2023-06-27-08-20-34",
+ *         prompt: "What is the meaning of life?",
+ *         temperature: 0.3,
+ *         max_tokens: 100,
+ *         presence_penalty: 0,
+ *         frequency_penalty: 0,
+ *         stop: ['\n', ' ->']
+ *       }
+ */
 
 
 var http = require('http');
@@ -29,7 +27,6 @@ var fetch = require('node-fetch');
 // For the certificate stuff
 const keyFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.key';
 const crtFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.crt';
-
 
 // Start HTTPS server if KEY and CERT exists
 if (fs.existsSync(keyFile) && fs.existsSync(crtFile)) {
@@ -46,17 +43,15 @@ if (fs.existsSync(keyFile) && fs.existsSync(crtFile)) {
   console.log('Warning: Not starting HTTPS server. Cert not found');
 }
 
-
 // Start HTTP server 
 let httpServer = http.createServer(requestListener).listen(HTTP_PORT);
 httpServer.on('error', function (e) {
   console.log(`Error starting HTTP server on port ${HTTP_PORT}. Use sudo in order to get root access to low port numbers`);
 });
 
-
 // Listener for both HTTPS and HTTP servers 
+// We are only proxying POST requests
 function requestListener(request, response) {
-
   if (request.method == 'POST') {
     response.writeHead(200, {
       'Content-Type': 'text/plain',
@@ -68,10 +63,8 @@ function requestListener(request, response) {
     })
     request.on('end', async () => {
       console.log('complete body', json)
-
       const OPENAI_URL = "https://api.openai.com/v1/completions"
       const OPENAI_API_KEY = process.process.env.OPENAI_API_KEY;
-
       const openAiResponse = await fetch(OPENAI_URL, {
         method: 'POST',
         body: json,
