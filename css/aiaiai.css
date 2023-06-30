@@ -1,10 +1,11 @@
 input[type="text"] {
   border: none;
   outline: none;
+  font-size: 16px;
 }
 
 .chatbot-conversation-container {
-  height: calc(100vh - 290px);
+  height: calc(100vh - 256px);
   overflow-y: scroll;
   margin: 1em 0;
 }
@@ -65,9 +66,10 @@ body {
 }
 
 .user-input {
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
 }
 
+/*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 
   select,
@@ -76,3 +78,4 @@ body {
     font-size: 16px;
   }
 }
+*/
