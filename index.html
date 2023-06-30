@@ -6,125 +6,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/aiaiai.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
 
-  <style>
-    input[type="text"] {
-      border: none;
-      outline: none;
-    }
-
-    .chatbot-conversation-container {
-      height: calc(100vh - 150px);
-      overflow-y: scroll;
-      margin: 1em 0;
-    }
-
-    .chatbot-input-container {
-      height: 56px;
-    }
-
-    .chatbot-header {
-      color: #632340
-    }
-
-    /* stop ugly scroll bar on some browsers */
-    .chatbot-conversation-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .chatbot-conversation-container::-moz-scrollbar {
-      display: none;
-    }
-
-    .speech {
-      border-radius: 16px;
-      margin: 8px;
-    }
-
-    .speech-ai {
-      border-top-left-radius: 0;
-      margin-right: 24px;
-      background-color: #ccc;
-    }
-
-    .speech-human {
-      border-top-right-radius: 0;
-      margin-left: 24px;
-      background-color: #ddd;
-    }
-
-    body {
-      background-color: #fbf1db;
-      color: #222;
-      font-family: Roboto, Arial, sans-serif;
-    }
-
-    .submit-btn {
-      font-size: 16px;
-      color: #632340;
-      background-color: white;
-      border: none;
-    }
-
-    .input-field {
-      border: 1px;
-      border-radius: 8px;
-      border-color: #632340;
-      background-color: white;
-      color: #632340;
-    }
-
-    .user-input {
-      width: calc(100% - 36px);
-    }
-  </style>
 </head>
-
 
 <body class="w3-content" style="max-width:600px">
 
-  <div class="w3-content"><!-- Limit content width to 960px -->
-    <div class="w3-row chatbot-container" id="chatbot-container">
+  <div class="w3-row chatbot-container" id="chatbot-container">
 
-      <div class="w3-container chatbot-header w3-padding">
-        <div class="w3-col" style="width:110px">
-          <img src="images/huma-2.svg" alt="huma-logo" width="108" height="32" class="logo">
-        </div>
-        <div class="w3-col" style="width:30px">
-          <img src="images/i.png" alt="ai-logo" height="32" class="logo">
-        </div>
-        <div class="w3-rest w3-right-align">
-          Huma Technical Support
-          <br>
-          <span style="font-size: small;">Ask me anything</span>
-        </div>
+    <div class="w3-container chatbot-header w3-padding">
+      <div class="w3-col" style="width:110px">
+        <img src="images/huma-2.svg" alt="huma-logo" width="108" height="32" class="logo">
       </div>
-
-      <div class="w3-container chatbot-conversation-container" id="chatbot-conversation">
-        <div class="w3-container speech speech-ai w3-padding">
-          Hello how can I help
-        </div>
+      <div class="w3-col" style="width:30px">
+        <img src="images/i.png" alt="ai-logo" height="32" class="logo">
       </div>
-
-      <div class="w3-container chatbot-input-container">
-        <div class="w3-container w3-padding input-field">
-          <form id="form">
-            <input class="user-input no-outline" name="user-input" type="text" id="user-input" required>
-            <button id="submit-btn" class="submit-btn">
-              <i class="fa fa-send"></i>
-            </button>
-          </form>
-        </div>
+      <div class="w3-rest w3-right-align">
+        Huma Technical Support
+        <br>
+        <span style="font-size: small;">Ask me anything</span>
       </div>
-
     </div>
+
+    <div class="w3-container chatbot-conversation-container" id="chatbot-conversation">
+      <div class="w3-container speech speech-ai w3-padding">
+        Hello how can I help
+      </div>
+    </div>
+
+    <div class="w3-container chatbot-input-container">
+      <div class="w3-container w3-padding input-field">
+        <form id="form">
+          <input class="user-input no-outline" name="user-input" type="text" id="user-input" required>
+          <button id="submit-btn" class="submit-btn">
+            <i class="fa fa-send"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
   </div>
 
   <script src="src/index.js"></script>
+
 </body>
 
 </html>
