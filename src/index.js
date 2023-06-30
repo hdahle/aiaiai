@@ -49,7 +49,7 @@ document.addEventListener('submit', async (e) => {
 // Sends request to OpenAI via proxy
 // The entire BODY of the POST request is sent unchanged to OpenAI
 async function fetchReplyUsingProxy() {
-  const response = await fetch('http://api.dashboard.eco:8080/', {
+  const response = await fetch('https://api.dashboard.eco:4443/', {
     method: 'POST',
     body: JSON.stringify({
       model: 'davinci:ft-hamachi-as-2023-06-27-08-20-34',
