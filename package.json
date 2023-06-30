@@ -1,15 +1,7 @@
 {
   "name": "aiaiai project",
   "private": true,
-  "dependencies": {
-    "openai": "^3.3.0"
-  },
-  "devDependencies": {
-    "webpack": "^5.88.0",
-    "webpack-cli": "^5.1.4"
-  },
   "scripts": {
-    "build": "webpack",
-    "wsl": "sudo cp dist/* /var/www/html/"
+    "wsl": "sudo cp index.html /var/www/html/; sudo cp css/* /var/www/html/css; sudo cp src/*.js /var/www/html/src; sudo cp images/* /var/www/html/images"
   }
 }
