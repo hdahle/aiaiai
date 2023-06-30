@@ -7,7 +7,7 @@ input[type="text"] {
 .chatbot-conversation-container {
   height: calc(100vh - 256px);
   overflow-y: scroll;
-  /*margin: 1em 0;*/
+  margin: 1em 0;
 }
 
 .chatbot-input-container {
