@@ -4,8 +4,13 @@ input[type="text"] {
   font-size: 16px;
 }
 
+.chatbot-container {
+  height: 100vh;
+  /*width: 100vw;*/
+}
+
 .chatbot-conversation-container {
-  height: calc(100vh - 256px);
+  height: calc(100vh - 56px - 64px - 32px);
   overflow-y: scroll;
   margin: 1em 0;
 }
@@ -15,7 +20,8 @@ input[type="text"] {
 }
 
 .chatbot-header {
-  color: #632340
+  color: #632340;
+  height: 64px;
 }
 
 /* stop ugly scroll bar on some browsers */
