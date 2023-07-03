@@ -22,4 +22,31 @@ const keyFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.key';
 const crtFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.crt';
 ````
 
+### How it works
+- The proxy listens on 8080 for HTTP and 4443 for HTTPS
+- The proxy has access to the OpenAI API key
+- When it receives a POST from the app, it forwards the POST body along with the API key to OpenAI
+- The proxy awaits a response from OpenAI
+- The proxy then takes the response body from OpenAI and returns it to the calling frontend-app
+
 ### Using the proxy
+The frontend app uses the proxy like this:
+````
+const response = await fetch('https://api.dashboard.eco:4443/', {
+    method: 'POST',
+    body: JSON.stringify({
+      model: 'davinci:ft-hamachi-as-2023-06-27-08-20-34',
+      prompt: conversationStr,
+      max_tokens: 100,
+      presence_penalty: 0,
+      frequency_penalty: 0,
+      temperature: 0,
+      stop: ['\n', ' ->']
+    }),
+    headers: {
+      "Accept": "application/json, text/plain, */*"
+    }
+  })
+  const result = await response.json()
+````
+
