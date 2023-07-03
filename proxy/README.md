@@ -15,3 +15,11 @@ I randomly chose these ports
 - HTTPS: 4443
 
 ### Certificates
+For HTTPS I use the following
+````
+// For the certificate stuff
+const keyFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.key';
+const crtFile = '/opt/bitnami/letsencrypt/certificates/api.dashboard.eco.crt';
+````
+
+### Using the proxy
