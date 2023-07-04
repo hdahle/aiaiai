@@ -29,7 +29,7 @@ Also, I changed the CSS to be responsive, using [W3Schools W3.CSS framework](htt
 ## Random comments
 
 - You need Get an API key from OpenAPI
-- The Youtube/Scrimba project this is based on used Vite for deployment
+- The Freecodecamp/Scrimba project used Vite for deployment
 - While Vite worked well for hosting on localhost, I could not get it to build an app correctly for remote deployment
 - Since the original App used the OpenAI node.js module, Vite was used to bundle the JS-app
 - Removing the OpenAI node.js module obviated the need for bundling
